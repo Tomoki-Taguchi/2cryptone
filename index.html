@@ -1,18 +1,21 @@
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>未来型 暗号化ツール</title>
-  <link rel="stylesheet" href="style.css">
-</head>
 <body>
   <h1>2025 Cipher Tool</h1>
 
-  <input type="text" id="text" placeholder="ここに文字を入力してください">
-  <button onclick="encrypt()">🔐 暗号化する</button>
-  <textarea id="result" readonly placeholder="ここに暗号化結果が表示されます"></textarea>
+  <div class="controls">
+    <label for="shift">シフト数 (1-25):</label>
+    <input type="number" id="shift" value="3" min="1" max="25" title="暗号化・復号に使用するズレの数">
+  </div>
+
+  <textarea id="text" placeholder="ここに文字を入力してください"></textarea>
+  
+  <div class="buttons-area">
+    <button onclick="encrypt()">🔐 暗号化する</button>
+    <button onclick="decrypt()">🔑 復号する</button>
+    <button onclick="copyResult()">📄 結果をコピー</button>
+    <button onclick="clearFields()">❌ クリア</button>
+  </div>
+
+  <textarea id="result" readonly placeholder="ここに処理結果が表示されます"></textarea>
 
   <script src="script.js"></script>
 </body>
-</html>
